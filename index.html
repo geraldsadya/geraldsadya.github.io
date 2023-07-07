@@ -1,419 +1,176 @@
-<html lang="en"><head>
-   <meta charset="UTF-8">
-   <!-- given below is Font Awesome CDN link -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-   <link rel="stylesheet" href="style.css">
-   <title>Geralds Personal Portfolio Website </title>
+<!DOCTYPE html> 
+<(html lang="en">
+  
+<head>
+  <meta charsets="UTF-8">
+  <meta http-equiv="X-UA-Compatible"> content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gerald Sadya Personal Portfolio | Codehal</title>
+<link rel="stylesheet" href="style.css">
+  
 </head>
-   <style>
-      /* Given below is Google Fonts CDN link */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap');
+  <style>
+     /* Given below is Google Fonts CDN link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap');
 *{
    margin: 0;
    padding: 0;
    box-sizing: border-box;
-   font-family: 'poppins',sans-serif;
+   font-family: 'Poppins',sans-serif;
 }
 body{
-   overflow: hidden;
+    background: #081b29;
+    color: #ededed;
 }
-.container{
-   width: 100%;
-   min-height: 100vh;
-   background-color: #f3f5f8;
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
 }
-nav{
-   display: flex;
-   width: 100%;
-   justify-content: space-around;
-   height: 80px;
-   line-height: 80px;
-   z-index: 111;
-}
+
 .logo{
-   display: flex;
-   font-size: 40px;
-   font-weight: 800;
-   color: #3d535f;
-   letter-spacing: 3px;
-   cursor: pointer;
-   text-transform: uppercase;
+  font-size: 25px;
+  color: #ededed;
+  text-decoration: none;
+  font-weight: 600;
 }
-b{
-   font-size: 70px;
-   color: #7f00ff;
-}
-.navItems{
-   display: flex;
-}
-.navItems li{
-   list-style: none;
-   margin: 0 15px;
-}
-.navItems li a{
-   font-size: 25px;
-   color: #3d535f;
-   letter-spacing: 3px;
-   text-decoration: none;
-   text-transform: capitalize;
-}
-.navItems li:hover a,
-.links a:hover{
-   color: #7f00ff;
-}
-.links a{
-   font-size: 30px;
-   color: #3d535f;
-   margin: 25px 10px;
-}
-.wrapper{
-   display: flex;
-   width: 100%;
-   height: calc(100vh - 80px);
-   justify-content: center;
-   align-items: center;
-   padding: 0 10%;
-   overflow: hidden;
-}
-.wrapper::before{
-   position: absolute;
-   content: '';
-   height: 600px;
-   width: 600px;
-   border-radius: 50%;
-   left: -12%;
-   top: 40%;
-   background: linear-gradient(45deg,#7f00ff,pink);
-   animation: object1 6s linear infinite;
-}
-.wrapper::after{
-   position: absolute;
-   content: '';
-   height: 200px;
-   width: 200px;
-   border-radius: 50%;
-   left: 35%;
-   top: 12%;
-   background: linear-gradient(45deg,#7f00ff,pink);
-   animation: object2 6s linear infinite;
-}
-@keyframes  object1{
-   50%{
-      left: -13%;
-      top: 41%;
-   }
-}
-@keyframes  object2{
-   50%{
-      left: 35%;
-      top: 10%;
-   }
-}
-.cols{
-   width: 50%;
-}
-.cols0{
-   width: 60%;
-   z-index: 5;
-}
-.topline{
-   display: block;
-   position: relative;
-   font-size: 35px;
-   letter-spacing: 5px;
-   color: #3d535f;
-}
-.topline::after{
-   position: absolute;
-   content: '';
-   height: 4px;
-   width: 45px;
-   bottom: 10px;
-   background-color: #7f00ff;
-}
-h1{
-   display: block;
-   font-size: 7em;
-   font-weight: 900;
-   color: #3d535f;
-}
-.multiText{
-   color: #7f00ff;
-   text-transform: capitalize;
-}
-p{
-   display: block;
-   width: 90%;
-   font-size: 1.2em;
-   color: #3d535f;
-}
-.btns{
-   width: 100%;
-   position: relative;
-   left: 150px;
-}
-button{
-   outline: none;
-   border: none;
-   cursor: pointer;
-   font-size: 25px;
-   font-weight: 400;
-   color: #fff;
-   background-color: #3d535f;
-   padding: 8px 14px;
-   margin: 40px 5px;
-   letter-spacing: 2px;
-   text-transform: capitalize;
-   box-shadow: 0 15px 10px rgba(0,0,0,0.4);
-}
-button:hover{
-   background-color: #7f00ff;
-}
-.imgbox{
-   position: relative;
-   width: 100%;
-   height: 100%;
-}
-.imgbox img{
-   position: relative;
-   height: 100%;
-   width: calc(130% - 80px);
-   top: -100px;
-   right: 50px;
-   transform: rotateY(180deg);
-   animation: animateUser 4s linear infinite;
-}
-@keyframes animateUser{
-   50%{
-      right: 30px;
-      top: -90px;
-   }
-}
-.imgbox #splash{
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%,-50%) rotate(-35deg);
-   width: 160%;
-   filter: saturate(200%);
-   animation: animate 4s linear infinite;
-}
-@keyframes animate{
-   50%{
-      top: 49%;
-      left: 51%;
-      width: 155%;
-   }
+.navbar a {
+  font-size: 18px;
+  color: #ededed;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 35px;
+  transition: .3s;
 }
 
-   </style>
+.navbar a:hover,
+.navbar a.active{
+  color: #00abf0;
+  
+}
+
+.home {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 10%;
+}
+
+.home-content{
+  max-width: 600px;
+}
+
+.home-content h1{
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.home-content h3{
+  font-size: 32px;
+  font-weight: 700;
+  color: 00abf0;
+}
+
+.home-content h3{
+  font-size: 16px;
+}
+
+.home-content p{
+  font-size: 16px;
+  margin: 20px 0 40px;
+}
+
+.home-content .btn-box{
+  display: flex;
+  justify-content: space-between;
+  width: 345px;
+  height: 50px;
+}
+
+.btn-box a{
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 100%;
+  background: #00abf0;
+  boarder: 2px solid #00abf0;
+  border-radius: 8px;
+  font-size: 19px;
+  color: #081b29;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  z-index: 1;
+  overflow: hidden;
+  transition: .5s;
+}
+
+.btn-box a:hover{
+  color: #00abf0;
+}
+
+.btn-box a:nth-child(2){
+  background: transparent;
+  color: #00abf0;
+}
+
+.btn-box a:nth-child(2):hover{
+  color: #081b29;
+}
+
+.btn-box a:nth-child(2)::before{
+  background: #00abf0;
+}
+
+.btn-box a::before {
+  content: '';
+  positions: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #081b29;
+  z-index: -1;
+  transition: .5s;
+}
+
+.btn-box a:hover ::before{
+  width: 100%;
+}
+
+  </style>
 <body>
-   <div class="container">
-      <nav>
-         <div class="logo">Gerald Sadya<b>.</b></div>
-         <ul class="navItems">
-            <li><a href="#">home</a></li>
-            <li><a href="#">about</a></li>
-            <li><a href="#">skills</a></li>
-            <li><a href="#">blog</a></li>
-         </ul>
-         <div class="links">
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-         </div>
-      </nav>
-
-      <div class="wrapper">
-         <div class="cols cols0">
-            <span class="topline">Hello</span>
-            <h1>I'm a <span class="multiText">c</span><span class="typed-cursor" aria-hidden="true">|</span></h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias pariatur dicta suscipit ratione veritatis dolor saepe harum. Amet, totam earum!</p>
-            <div class="btns">
-               <button>Download CV</button>
-               <button>Hire e</button>
-            </div>
-         </div>
-         <div class="cols cols1">
-            <div class="imgbox">
-               <img src="splash.png" id="splash">
-               <img src="img.png">
-            </div>
-         </div>
+  
+  <header class="header">
+    <a href="#" class="logo">Gerald.</a>
+  
+    <nav class="navbar">
+      <a href="#" class="active">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Blog</a>
+    </nav>
+  </header>
+ 
+  <section class="home">
+    <div class="home-content">
+      <h1>Hi, I'm Gerald</h1>
+      <h3>Developer</h3>
+      <p>Mumbo Jumbo description</p>
+      <div class="btn-box">
+        <a href="#">Hire Me</a>
+        <a href="#">Let's Talk</a>
       </div>
-   </div>
-
-   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-   <script>
-      var typingEffect = new Typed(".multiText",{
-         strings : ["Coder","Developer","Designer"],
-         loop : true,
-         typeSpeed : 100,
-         backSpeed : 80,
-         backDelay : 1500
-      })
-   </script><style type="text/css" data-typed-js-css="true">
-        .typed-cursor{
-          opacity: 1;
-        }
-        .typed-cursor.typed-cursor--blink{
-          animation: typedjsBlink 0.7s infinite;
-          -webkit-animation: typedjsBlink 0.7s infinite;
-                  animation: typedjsBlink 0.7s infinite;
-        }
-        @keyframes typedjsBlink{
-          50% { opacity: 0.0; }
-        }
-        @-webkit-keyframes typedjsBlink{
-          0% { opacity: 1; }
-          50% { opacity: 0.0; }
-          100% { opacity: 1; }
-        }
-      </style>
-
-</body></html>
-
-<head>
-   <meta charset="UTF-8">
-   <!-- given below is Font Awesome CDN link -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-   <link rel="stylesheet" href="style.css">
-   <title>Personal Portfolio Website With Typing Effect</title>
-</head>
-<body>
-   <div class="container">
-      <nav>
-         <div class="logo">folio<b>.</b></div>
-         <ul class="navItems">
-            <li><a href="#">home</a></li>
-            <li><a href="#">about</a></li>
-            <li><a href="#">skills</a></li>
-            <li><a href="#">blog</a></li>
-         </ul>
-         <div class="links">
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-         </div>
-      </nav>
-
-      <div class="wrapper">
-         <div class="cols cols0">
-            <span class="topline">Hello</span>
-            <h1>I'm <span class="multiText">yout</span><span class="typed-cursor" aria-hidden="true">|</span></h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias pariatur dicta suscipit ratione veritatis dolor saepe harum. Amet, totam earum!</p>
-            <div class="btns">
-               <button>download CV</button>
-               <button>hire me</button>
-            </div>
-         </div>
-         <div class="cols cols1">
-            <div class="imgbox">
-               <img src="splash.png" id="splash">
-               <img src="img.png">
-            </div>
-         </div>
-      </div>
-   </div>
-
-   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-   <script>
-      var typingEffect = new Typed(".multiText",{
-         strings : ["coder","Developer","designer"],
-         loop : true,
-         typeSpeed : 100,
-         backSpeed : 80,
-         backDelay : 1500
-      })
-   </script><style type="text/css" data-typed-js-css="true">
-        .typed-cursor{
-          opacity: 1;
-        }
-        .typed-cursor.typed-cursor--blink{
-          animation: typedjsBlink 0.7s infinite;
-          -webkit-animation: typedjsBlink 0.7s infinite;
-                  animation: typedjsBlink 0.7s infinite;
-        }
-        @keyframes typedjsBlink{
-          50% { opacity: 0.0; }
-        }
-        @-webkit-keyframes typedjsBlink{
-          0% { opacity: 1; }
-          50% { opacity: 0.0; }
-          100% { opacity: 1; }
-        }
-      </style>
-
+    </div>
 </body>
-<html lang="en"><head>
-   <meta charset="UTF-8">
-   <!-- given below is Font Awesome CDN link -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-   <link rel="stylesheet" href="style.css">
-   <title>Personal Portfolio Website With Typing Effect</title>
-</head>
-<body>
-   <div class="container">
-      <nav>
-         <div class="logo">folio<b>.</b></div>
-         <ul class="navItems">
-            <li><a href="#">home</a></li>
-            <li><a href="#">about</a></li>
-            <li><a href="#">skills</a></li>
-            <li><a href="#">blog</a></li>
-         </ul>
-         <div class="links">
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-         </div>
-      </nav>
 
-      <div class="wrapper">
-         <div class="cols cols0">
-            <span class="topline">Hello</span>
-            <h1>I'm <span class="multiText">coder</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true">|</span></h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias pariatur dicta suscipit ratione veritatis dolor saepe harum. Amet, totam earum!</p>
-            <div class="btns">
-               <button>download CV</button>
-               <button>hire me</button>
-            </div>
-         </div>
-         <div class="cols cols1">
-            <div class="imgbox">
-               <img src="splash.png" id="splash">
-               <img src="img.png">
-            </div>
-         </div>
-      </div>
-   </div>
-
-   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-   <script>
-      var typingEffect = new Typed(".multiText",{
-         strings : ["coder","Developer","designer"],
-         loop : true,
-         typeSpeed : 100,
-         backSpeed : 80,
-         backDelay : 1500
-      })
-   </script><style type="text/css" data-typed-js-css="true">
-        .typed-cursor{
-          opacity: 1;
-        }
-        .typed-cursor.typed-cursor--blink{
-          animation: typedjsBlink 0.7s infinite;
-          -webkit-animation: typedjsBlink 0.7s infinite;
-                  animation: typedjsBlink 0.7s infinite;
-        }
-        @keyframes typedjsBlink{
-          50% { opacity: 0.0; }
-        }
-        @-webkit-keyframes typedjsBlink{
-          0% { opacity: 1; }
-          50% { opacity: 0.0; }
-          100% { opacity: 1; }
-        }
-      </style>
-
-</body></html>
+</html>
