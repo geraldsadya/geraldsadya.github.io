@@ -7,17 +7,9 @@
   overflow: hidden; /* Hide overflow to simulate typing */
   white-space: nowrap; /* Prevent line breaks */
   border-right: 2px solid #00abf0; /* Blinking cursor appearance */
-  animation: typing 6s steps(80, end), /* Typing effect */
+  animation: typing 3s steps(40, end), /* Typing effect */
              blink-caret .75s step-end infinite; /* Blinking cursor */
 }
-@keyframes typing-backspace {
-      0%, 50% {
-        width: 0;
-      }
-      100% {
-        width: 100%;
-      }
-    }
 
 @keyframes typing {
   from {
@@ -196,8 +188,7 @@ body {
  
   <section class="home">
     <div class="home-content">
-      <h1 class="typewriter" id="text1">Hi, I'm Gerald Sadya Developer</h1>
-      <h1 class="typewriter" id="text2" style="display: none;">Hi, I'm Batman</h1>
+      <h1 class="typewriter">Hi, I'm Gerald Sadya</h1>
       <h3 class="typewriter">Developer</h3>
       <p>Mumbo Jumbo description</p>
       <div class="btn-box">
@@ -206,31 +197,12 @@ body {
       </div>
     </div>
   </section>
-  
   <script>
-    const texts = ["Hi, I'm Gerald Sadya Developer", "Hi, I'm Batman"];
-    let currentTextIndex = 0;
-    
     document.addEventListener("DOMContentLoaded", function () {
-      const h1Elements = document.querySelectorAll(".typewriter");
-      animateText();
-
-      function animateText() {
-        const currentElement = h1Elements[currentTextIndex];
-        currentElement.style.display = "inline"; // Show the current element
-        currentElement.classList.add("typing-animation"); // Start typing animation
-        
-        // After 3 seconds, trigger backspace animation and switch to the next text
-        setTimeout(function () {
-          currentElement.classList.remove("typing-animation"); // Remove typing animation
-          currentElement.style.display = "none"; // Hide the current element
-          currentTextIndex = (currentTextIndex + 1) % texts.length; // Switch to the next text
-          animateText(); // Call the function recursively to continue the loop
-        }, 3000);
-      }
+      const h1Element = document.querySelector(".typewriter");
+      h1Element.classList.add("typing-animation");
     });
   </script>
-
 </body>
   
 </html>
