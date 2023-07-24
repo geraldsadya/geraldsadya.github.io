@@ -2,6 +2,34 @@
 <html lang="en">
 <head>
   <style>
+    /* CSS for typing animation */
+.typewriter {
+  overflow: hidden; /* Hide overflow to simulate typing */
+  white-space: nowrap; /* Prevent line breaks */
+  border-right: 2px solid #00abf0; /* Blinking cursor appearance */
+  animation: typing 3s steps(40, end), /* Typing effect */
+             blink-caret .75s step-end infinite; /* Blinking cursor */
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #00abf0;
+  }
+}
+
     /* Given below is Google Fonts CDN link */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap');
 *{
@@ -160,7 +188,7 @@ body {
  
   <section class="home">
     <div class="home-content">
-      <h1>Hi, I'm Gerald Sadya</h1>
+      <h1 class="typewriter">Hi, I'm Gerald Sadya Developer</h1>
       <h3>Developer</h3>
       <p>Mumbo Jumbo description</p>
       <div class="btn-box">
@@ -169,6 +197,12 @@ body {
       </div>
     </div>
   </section>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const h1Element = document.querySelector(".typewriter");
+      h1Element.classList.add("typing-animation");
+    });
+  </script>
 </body>
   
 </html>
