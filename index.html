@@ -163,7 +163,9 @@ body {
   width: 100%;
 }
 .developer-typewriter {
-  position: relative; /* Set the parent element to be a reference for absolute positioning */
+  position: relative;
+  display: inline-block; /* Ensure the width adjusts to the content */
+  white-space: nowrap; /* Prevent line breaks */
 }
 
 .typed-cursor {
