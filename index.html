@@ -170,7 +170,8 @@ body {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gerald Sadya Personal Portfolio | Codehal</title>
 <link rel="stylesheet" href="style.css">
-  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+
 </head>
 <body>
   
@@ -189,7 +190,7 @@ body {
   <section class="home">
     <div class="home-content">
       <h1 class="typewriter">Hi, I'm Gerald Sadya</h1>
-      <h3 >Developer</h3>
+      <h3 class="developer-typewriter">Developer</h3>
       <p>Mumbo Jumbo description</p>
       <div class="btn-box">
         <a href="#">Hire Me</a>
@@ -198,11 +199,17 @@ body {
     </div>
   </section>
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const h1Element = document.querySelector(".typewriter");
-      h1Element.classList.add("typing-animation");
+  document.addEventListener("DOMContentLoaded", function () {
+    var developerTypingEffect = new Typed(".developer-typewriter", {
+       strings : ["Developer","Coder","Batman"],
+       loop : true,
+       typeSpeed : 100,
+       backSpeed : 80,
+       backDelay : 1500
     });
-  </script>
+  });
+</script>
+
 </body>
   
 </html>
