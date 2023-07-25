@@ -169,13 +169,26 @@ body {
 }
 
 .typed-cursor {
-  position: absolute; /* Position the caret absolutely */
-  top: 0; /* Adjust the top position as needed */
-  right: -5px; /* Adjust the right position as needed */
-  margin-top: 2px; /* Optionally adjust the vertical alignment of the caret */
-  height: 100%; /* Ensure the caret takes the full height of the h3 element */
-  display: inline-block; /* Ensure the caret is visible */
-}
+      position: absolute; /* Position the caret absolutely */
+      top: 0; /* Adjust the top position as needed */
+      right: -5px; /* Adjust the right position as needed */
+      margin-top: 2px; /* Optionally adjust the vertical alignment of the caret */
+      height: 100%; /* Ensure the caret takes the full height of the h3 element */
+      width: 1px; /* Set the width of the caret */
+      background-color: #fff; /* Set the caret color */
+      animation: blink-caret .75s step-end infinite; /* Add blinking animation */
+      display: inline-block; /* Ensure the caret is visible */
+    }
+/* Blinking caret animation */
+    @keyframes blink-caret {
+      from,
+      to {
+        background-color: #fff; /* Set the caret color */
+      }
+      50% {
+        background-color: transparent; /* Make the caret transparent to simulate blinking */
+      }
+    }
     
   </style>
   
